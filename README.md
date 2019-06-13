@@ -14,7 +14,7 @@ that was able to autonomously control and fly the drone through created flightpa
 * Interspace sections of the track by more waypoints, in order to get finer elevation profile
 * Download created track locally or upload it to cloud storage (OneDrive)
 * Edit previously created tracks
-* Final output of the application are XML data containing GPX track and flight parameters
+* Final output of the application is XML file containing track in GPX format and flight parameters
 
 Example of a basic line track
 Example of a "grid" track
