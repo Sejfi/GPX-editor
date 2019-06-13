@@ -23,5 +23,6 @@ Example of a basic line track
 Example of a "grid" track
 
 ![grid track](https://sejfi.github.io/GPX-editor/images/ttip-grid.PNG)
+![concave polygon not supported](https://sejfi.github.io/GPX-editor/images/grid-red.PNG)
 
 In order to properly fill polygon by parallel track, the editor supports only convex polygons
