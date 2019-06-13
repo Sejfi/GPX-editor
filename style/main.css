@@ -1,0 +1,141 @@
+.controls{
+    height: 100vh;
+    width: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;    
+    padding: 0 10px;
+    float: left;
+}
+
+.controls, .save-dialog-container {
+    background-color: antiquewhite;
+}
+
+#map{
+    float: right;
+    height: 100vh;
+    width: calc(100vw - 400px);
+}
+
+header{
+    height: 45px;
+    padding-top: 5px;
+    font-size: 40px;
+    text-align: center;
+    font-family: 'Merriweather', serif;
+    font-weight: 900;
+}
+
+.controls > * {
+    /*position: relative;*/
+}
+
+.section-headline {
+    font-size: 16px;
+    font-weight: bold;
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 5px;
+}
+
+.section-load{
+    height: 60px;
+    /* position: relative; */
+    /* display: none; */
+}
+
+.section-new-track{
+    height: 60px;
+}
+
+.section-params{
+    height: 250px;
+}
+
+.slider-cont {
+    margin-bottom: 15px;
+}
+
+.slider-label{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: inline-block;
+}
+
+.slider-val {
+    font-weight: bold;
+    width: 25px;
+    text-align: right;
+}
+
+.slider-val, .val-unit{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    float: right;
+}
+
+.interpolation-block{
+    clear:both;    
+}
+
+.section-stats{
+    height: 100px;
+}
+
+.stats{
+    width: 180px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.stats-a{
+    float: left;
+}
+
+.stats-b{
+    float: right;
+}
+
+.section-profile{
+    /* background-color: #24c0f9; */
+    height: 250px;
+}
+
+.profile {
+    width: 380px;
+    height: 190px;
+    background-color: rgb(228, 228, 228);
+    position: relative;
+    border-radius: 10px;
+    margin-bottom: 6px;
+}
+
+#no-ele {
+    width: 380px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    opacity: 0.5;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+#elevationPlot {
+    display: none;
+}
+
+#loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.section-save{
+    height: 70px;
+}
+
+body{
+    margin: 0;
+    overflow: hidden;
+}

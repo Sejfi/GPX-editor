@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GPX Editor</title>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/controls.css">
+    <link rel="stylesheet" href="style/responsive.css">
+    <link rel="stylesheet" href="style/savedialog.css">
+    <link rel="stylesheet" href="style/map.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</head>
+<body>
+    <div id="controls" class="controls">
+        <header>GPX Editor</header>
+        <div class="section-load">
+            <div class="section-headline">Load file</div>
+            <button id="btn-l-local" class="btn-ctrl-twin twin-left">Local</button>
+            <div id="tooltip-local" class="tooltip">
+                Load file from your device.
+                <br><br>
+                You can load GPS data in .gpx format or previously created
+                mission in this editor (.taitale).
+            </div>
+            <input type="file" id="file-input" accept=".taitale, .gpx" class="btn-ctrl-twin twin-left">
+            <button id="btn-l-onedrive" class="btn-ctrl-twin">                
+                <i class="fas fa-cloud"></i> OneDrive
+            </button>
+            <div id="tooltip-onedrive" class="tooltip">
+                Load file from cloud storage.
+                <br><br>
+                You can load GPS data in .gpx format or previously created
+                mission in this editor (.taitale).
+            </div>
+        </div>
+        <div class="section-new-track">
+            <div class="section-headline">New track</div>
+            <button id="poly-line" class="btn-ctrl-twin  twin-left">Line</button>
+            <div class="tooltip">
+                <img src="images/ttip-line-small.PNG" alt="">
+                Create new track by manualy positioning waypoints into the map.
+            </div>
+            <button id="grid" class="btn-ctrl-twin">Grid</button>
+            <div class="tooltip">
+                <img src="images/ttip-grid-small.PNG" alt="">
+                Cover selected area by track in the form of a grid.
+                <br><br>
+                Select vertices of a polygon, which will be filled by evenly spaced parallel lines.
+
+            </div>
+
+        </div>
+        <div class="section-params">
+            <div class="section-headline">Track parameters</div>
+            <div class="slider-cont">
+                <div class="slider-label">Altitude (AGL):</div>
+                <span class="val-unit"> m</span><span class="slider-val" id="altitude-val">20</span>
+                <input type="range" id="altitude" min="1" max="60">
+            </div>
+            <div class="slider-cont">
+                <div class="slider-label">Speed:</div>
+                <span class="val-unit"> km/h</span><span class="slider-val" id="speed-val-km">18</span>
+                <span class="val-unit"> m/s,</span><span class="slider-val" id="speed-val-m">5</span>
+                <input type="range" id="speed" min="1" max="14">
+                
+            </div>
+            <div class="slider-cont">
+                <div class="slider-label">Photo Time Interval, Overlap:</div>
+                <span class="val-unit"> %</span><span class="slider-val" id="photo-val-percent">61</span>
+                <span class="val-unit"> s,</span><span class="slider-val" id="photo-val-sec">2</span>
+                <input type="range" id="photo-interval" min="1" max="12">
+            </div>
+            <div class="slider-cont">
+                <div class="slider-label">Track Interpolation Step:</div>
+                <span class="val-unit"> m</span><span id="interp-val" class="slider-val">28</span>
+                <div class="interpolation-block">
+                    <label class="switch">
+                        <input id="chbx-interpolation" type="checkbox">
+                        <span class="switch-body">
+                            <span class="switch-pin"></span>
+                        </span>                    
+                    </label>
+                    <label for="interpolation" style="display: none">Track interpolation</label>
+                    <input type="range" id="interpolation" min="5" max="30">
+                </div>
+                
+            </div>
+        </div>
+        <div class="section-stats">
+            <div class="section-headline">Track statistics</div>
+            <div class="stats-a stats">
+                Trackpoints: <span id="stat-trackpoints">0</span><br>
+                Lowest point: <span id="stat-lowest">0m</span><br>
+                Highest point: <span id="stat-highest">0m</span><br>
+            </div>
+            <div class="stats-b stats">
+                Map length: <span id="stat-map-length">0m</span><br>
+                Real length: <span id="stat-real-length">0m</span><br>
+                Flight time: <span id="stat-flight-time">-m -s</span><br>
+            </div>
+
+             
+        </div>
+        <div class="section-profile">
+            <div class="section-headline">Track profile</div>
+            <div class="profile">
+                <div id="no-ele" class="elebox">No elevation data for the current track.</div>
+                <div id="elevationPlot" class="elebox" ></div>
+                <img id="loading" class="elebox" src="images/loading4.gif" alt="loading" width="100" height="100">
+            </div>
+            <button id="get-elevation" class="btn-ctrl-solo">Get Elevation</button>
+        </div>
+        <div class="section-save">
+            <div class="section-headline">Save file</div>
+            <button id="btn-savedialog" class="btn-ctrl-solo  twin-left">Export Track</button>
+        </div>
+    </div>
+
+    <!--    ----------    Save to file window   ----------  -->
+    <div id="save-dialog-background" class="save-dialog-background">
+    </div>
+    <div id="save-dialog-container" class="save-dialog-container">
+        <div id="close-save-dialog" class="close"></div>
+        <h2>Save dialog</h2>
+        <div class="save-row">
+            <label for="mission-name">Name:</label>
+            <input id="mission-name" type="text">
+        </div>
+        <div class="save-row">
+            <label for="mission-description">Description:</label>
+            <textarea id="mission-description" rows="3"></textarea>
+        </div>
+        <div id="save-errors" class="save-row"></div>
+        <div class="save-btns">
+            <div class="save-row">
+                Save to:
+            </div>
+            <button id="btn-save-local" class="twin-left">Local</button><button id="btn-save-onedrive" class="">OneDrive</button>
+        </div>
+
+    </div>
+
+    <!--    ----------    GOOGLE MAP    ----------  -->
+    <div id="map"></div>
+    <label for="pac-input" style="display: none;">Map searchbar</label>
+    <input id="pac-input" class="" type="text" placeholder="Search Places">
+    <button id="finish-track" class="finish">Finish track (or right-click the map)</button>
+<!--    <button id="finish-grid" class="finish">Finish track (or right-click the map)</button>-->
+    <div id="legend"><h4>Legend</h4></div>
+
+    <script src="javascript/libraries/jquery-3.2.1.js"></script>
+    <script src="javascript/libraries/FileSaver.js"></script>
+    <script src="https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/vkbeautify/vkbeautify.0.99.00.beta.js"></script>
+
+    <script type="text/javascript" src='https://www.gstatic.com/charts/loader.js'></script>
+    <script type="text/javascript" src="https://js.live.net/v7.2/OneDrive.js"></script>
+    <script src="javascript/classes/OneDrive.js"></script>
+    <script src="javascript/classes/GoogleMap.js"></script>
+    <script src="javascript/classes/AppState.js"></script>
+    <script src="javascript/classes/Line.js"></script>
+    <script src="javascript/classes/Waypoint.js"></script>
+    <script src="javascript/classes/Track.js"></script>
+    <script src="javascript/classes/Mission.js"></script>
+    <script src="javascript/classes/Polyline.js"></script>
+    <script src="javascript/classes/Grid.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoLfW-Ue0iz9Q4Ao9w-P27X54RF-VzKnI&libraries=places&callback=initMap"
+    async defer></script>
+    <script src="javascript/main.js"></script>
+</body>
+</html>

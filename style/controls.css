@@ -1,0 +1,167 @@
+/* buttons, sliders, etc. */
+.btn-ctrl-twin {
+    width: 180px;    
+}
+
+.twin-left{
+    margin-right: 20px;
+}
+
+.controls button, .save-dialog-container button {
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid black;
+    box-shadow: 0 0 5px #6b6b6b;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    float: left;
+    background-color: rgb(211, 210, 210);    
+}
+
+.controls button:hover {
+    background-color: white;
+}
+
+.btn-ctrl-solo {
+    width: 180px;
+    margin: 0 100px;
+}
+
+.save-dialog-container button{
+    width: 140px;
+}
+
+#file-input {
+    display: none;
+}
+
+.tooltip {
+    position: absolute;    
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    visibility: hidden;
+    opacity: 0;
+    background-color: white;
+    z-index: 1;
+    transition: opacity 0.5s linear;
+    max-width: 200px;
+    margin: 10px 0 0 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.tooltip img {
+    margin: 0 5px;
+
+}
+
+button:hover + .tooltip {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.5s linear;
+    
+}
+
+input[type=range], button {
+    outline: none;
+    cursor: pointer;
+}
+
+.slider-cont input[type=range] {
+    -webkit-appearance: none;
+    height: 7px;
+    width: 370px;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color: rgb(211, 210, 210);
+}
+
+.slider-cont input[type=range]:hover {
+    background-color: white;
+}
+
+.slider-cont input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 50%;
+    border: 1px solid black;
+    height: 20px;
+    width: 20px;
+    background: gray;
+}
+
+#interpolation{
+    width: 315px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 22px;
+    clear: both;    
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.switch-body {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(211, 210, 210);
+    border-radius: 22px;
+    border: 1px solid black;
+    font-size: 12px;
+}
+
+.switch-body:hover {
+    background-color: white;
+}
+
+.switch-pin{
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    top: 1px;
+    background-color: gray;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+input:checked + .switch-body .switch-pin {
+    transform: translateX(20px);
+    background-color: white; 
+}
+
+input:checked + .switch-body {
+    background-color: black;
+}
+
+input:checked + .switch-body:hover {
+    background-color: white;
+}
+
+.infowindow-btn {
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 5px black;
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(211, 210, 210);
+    margin: 5px;
+}
+
+.infowindow-add {
+    background-color: #00ae00;
+}
+
+.infowindow-del {
+    background-color: #dd4100;
+}

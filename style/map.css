@@ -1,0 +1,87 @@
+#legend {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    background: #fff;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 0 1px 3px #c1c1c1;
+    border-radius: 2px;
+}
+
+#legend h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+#legend img {
+    vertical-align: middle;
+}
+
+.pac-card {
+    margin: 10px 10px 0 0;
+    border-radius: 2px 0 0 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+
+#pac-container {
+    padding-bottom: 12px;
+    margin-right: 12px;
+}
+
+.pac-controls {
+    display: inline-block;
+    padding: 5px 11px;
+}
+
+.pac-controls label {
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+}
+#pac-input {
+    background-color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    margin-left: 12px;
+    padding: 0 11px 0 13px;
+    text-overflow: ellipsis;
+    width: 400px;
+    height: 40px;
+    top: 10px !important;
+    border: none;
+    box-shadow: 0 1px 3px #c1c1c1;
+    border-radius: 2px;
+}
+#pac-input:focus {
+    border-color: #4d90fe;
+}
+
+#target {
+    width: 345px;
+}
+
+.finish {
+    margin-left: 10px;
+    height: 40px;
+    background-color: white;
+    border: none;
+    box-shadow: 0 0 5px #b3b3b3;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    border-radius: 2px;
+}
+
+.finish:hover {
+    background-color: rgb(210,210,210);
+}
+
+#finish-track{
+    display: none;
+}
