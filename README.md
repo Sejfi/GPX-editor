@@ -16,13 +16,19 @@ that was able to autonomously control and fly the drone through created flightpa
 * Edit previously created tracks
 * Final output of the application is XML file containing track in GPX format and flight parameters
 
-Example of a basic line track
+#### Example of a basic line track
 
 ![line track](https://sejfi.github.io/GPX-editor/images/ttip-line.PNG)
 
-Example of a "grid" track
+#### Example of a "grid" track
 
 ![grid track](https://sejfi.github.io/GPX-editor/images/ttip-grid.PNG)
 ![concave polygon not supported](https://sejfi.github.io/GPX-editor/images/grid-red.PNG)
 
 In order to properly fill polygon by parallel track, the editor supports only convex polygons
+
+#### Elevation profile
+
+![elevation profile](https://sejfi.github.io/GPX-editor/images/elevation.PNG)
+
+Chart created using Google charts and elevation data from Google Elevation Service
