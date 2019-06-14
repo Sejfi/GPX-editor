@@ -2,6 +2,8 @@
 Allows you to create flight path for a drone, in order to accurately take pictures along the path (for later processing and creating 
 3D models).
 
+Live at [https://sejfi.github.io/GPX-editor/](https://sejfi.github.io/GPX-editor/)
+
 This application was part of a project during my bachelor's degree and was created to work alongside an Android drone control application
 that was able to autonomously control and fly the drone through created flightpath and accurattely take pictures of terrain underneath.
 
@@ -12,7 +14,7 @@ that was able to autonomously control and fly the drone through created flightpa
 * Set parameters of the flight (height, speed, overlap of the photographs)
 * Download terrain elevation data from Google Elevation Service (and draw elevation profile)
 * Interspace sections of the track by more waypoints, in order to get finer elevation profile
-* Download created track locally or upload it to cloud storage (OneDrive)
+* Download created track or upload it to cloud storage (OneDrive)
 * Edit previously created tracks
 * Final output of the application is XML file containing track in GPX format and flight parameters
 
