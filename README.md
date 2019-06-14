@@ -25,10 +25,19 @@ that was able to autonomously control and fly the drone through created flightpa
 ![grid track](https://sejfi.github.io/GPX-editor/images/ttip-grid.PNG)
 ![concave polygon not supported](https://sejfi.github.io/GPX-editor/images/grid-red.PNG)
 
-In order to properly fill polygon by parallel track, the editor supports only convex polygons
+In order to properly fill polygon by parallel track, the editor supports only convex polygons.
 
 #### Elevation profile
 
 ![elevation profile](https://sejfi.github.io/GPX-editor/images/elevation.PNG)
 
 Chart created using Google charts and elevation data from Google Elevation Service
+
+#### Track interspacing
+
+![track without interspacing](https://sejfi.github.io/GPX-editor/images/ele1.PNG)
+
+![interspaced track](https://sejfi.github.io/GPX-editor/images/ele2.PNG)
+
+Editor can interspace the track by additional trakpoints in order to get elevation data along the straight sections.
+
